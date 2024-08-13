@@ -17,13 +17,13 @@ public class CatalogoLivros {
 
     public void adicionarLivro(String titulo, String autor, int anoPublicacao) {
         System.out.print("\033[H\033[2J");
-            Livro novoLivro = new Livro();
-            if(!titulo.equals("0")){
-                novoLivro.setTitulo(titulo);
-                novoLivro.setAutor(autor);
-                novoLivro.setAnoPublicacao(anoPublicacao);
-                catalogoLivros.add(novoLivro);
-            }
+        Livro novoLivro = new Livro();
+        if(!titulo.equals("0")){
+            novoLivro.setTitulo(titulo);
+            novoLivro.setAutor(autor);
+            novoLivro.setAnoPublicacao(anoPublicacao);
+            catalogoLivros.add(novoLivro);
+        }
     }
 
     public List<Livro> buscarLivroPorAutor(String autor) {

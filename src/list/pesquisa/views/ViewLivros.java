@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class ViewLivros {
-    private CatalogoLivros catalogoLivros;
+    private final CatalogoLivros catalogoLivros;
     private final Scanner input = new Scanner(System.in);
 
     public ViewLivros(CatalogoLivros catalogoLivros) {
@@ -30,7 +30,7 @@ public class ViewLivros {
             if(!titulo.equals("0")) {
                 System.out.print("Digite o Autor do livro: ");
                 autor = input.next();
-                System.out.print("Digite o Anode Publicação do livro: ");
+                System.out.print("Digite o Ano de Publicação do livro: ");
                 anoPublicacao = input.nextInt();
                 System.out.println("\n");
                 catalogoLivros.adicionarLivro(titulo, autor, anoPublicacao);
@@ -97,11 +97,11 @@ public class ViewLivros {
         System.out.print("\033[H\033[2J");
         List<Livro> listaLivros = catalogoLivros.listarCatalogoLivros();
         if (!listaLivros.isEmpty()) {
-            for(Livro l : listaLivros){
+            for (Livro l : listaLivros) {
                 System.out.println("\n--------------------------------------");
                 System.out.println("Tútulo: ".concat(l.getTitulo()));
                 System.out.println("Autor: ".concat(l.getAutor()));
-                System.out.println("Tútulo: "+l.getAnoPublicacao());
+                System.out.println("Tútulo: " + l.getAnoPublicacao());
                 System.out.println("--------------------------------------");
             }
             System.out.println("Total de livros encontrados: " + listaLivros.size());
