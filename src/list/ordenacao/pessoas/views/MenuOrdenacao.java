@@ -1,14 +1,14 @@
-package list.carrinho.views;
+package list.ordenacao.pessoas.views;
 
 import java.util.Scanner;
 
-public class MenuCompras {
-    private final ViewCarrinho viewCarrinho;
+public class MenuOrdenacao {
+
+    private final OrdenacaoPessoasView ordenacaoPessoasView;
     private boolean running = true;
 
-
-    public MenuCompras(ViewCarrinho viewCarrinho) {
-        this.viewCarrinho = viewCarrinho;
+    public MenuOrdenacao(OrdenacaoPessoasView ordenacaoPessoasView) {
+        this.ordenacaoPessoasView = ordenacaoPessoasView;
     }
 
     public void mainMenu() throws InterruptedException {
@@ -22,31 +22,26 @@ public class MenuCompras {
     private void menu(Scanner input) throws InterruptedException {
         System.out.print("\033[H\033[2J");
         System.out.println("Menu principal");
-        System.out.println("1 - Adicionar item de compra");
-        System.out.println("2 - Listar itens da compra");
-        System.out.println("3 - Remover item pelo nome");
-        System.out.println("4 - Fechar compra");
-        System.out.println("5 - Encerrar programa\n");
+        System.out.println("1 - Adicionar pessoa");
+        System.out.println("2 - Ordenar pessoas por idade");
+        System.out.println("3 - OIrdenar pessoas por altura");
+        System.out.println("4 - Encerrar programa\n");
         System.out.print("escolha uma opção: ");
         int option = input.nextInt();
         switch (option) {
             case 1: {
-                viewCarrinho.adicionarItemView(input);
+                ordenacaoPessoasView.adicionarPessoasView(input);
                 break;
             }
             case 2: {
-                viewCarrinho.listarItensView();
+                ordenacaoPessoasView.ordenaPorIdadeView();
                 break;
             }
             case 3: {
-                viewCarrinho.removerItemView(input);
+                ordenacaoPessoasView.ordenaPorAlturaView();
                 break;
             }
-            case 4: {
-                viewCarrinho.exibirTotalCompra();
-                break;
-            }
-            case 5:
+            case 4:
                 running = false;
                 System.out.println("Encerrando o programa...");
                 break;
